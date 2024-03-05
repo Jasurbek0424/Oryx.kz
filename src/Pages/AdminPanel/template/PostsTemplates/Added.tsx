@@ -30,7 +30,9 @@ const Modal: React.FC<ModalProps> = ({ onClose }) => {
                 sm:px-6 rounded-md relative max-w-3xl w-full h-max"
                 onClick={(e) => e.stopPropagation()}>
                 <div className='flex justify-end gap-4 w-full mt-5'>
-                    <button type='submit' className='flex items-center gap-2 md:py-2 px-4 md:px-6
+                    <button
+                        onClick={onClose}
+                        type='submit' className='flex items-center gap-2 md:py-2 px-4 md:px-6
                     shadow bg-gray-400 rounded text-white'>
                         <TiArrowBackOutline className='text-lg' />
                         Назад
@@ -226,10 +228,10 @@ const Added: React.FC = () => {
     };
 
     return (
-        <div className='w-full bg-white p-8 rounded-md mt-4 shadow border'>
+        <div className='w-full bg-white p-4 md:p-8 sm:rounded-md mt-4 sm:shadow sm:border'>
             <table className='w-full text-xs lg:text-sm'>
                 <tbody>
-                    <tr className=''>
+                    <tr className='w-full'>
                         <td className="">
                             <input
                                 type="checkbox"
@@ -238,46 +240,46 @@ const Added: React.FC = () => {
                                 onChange={handleSelectAllChange}
                                 className="mr-2"
                             />
-                            <label htmlFor="selectAll">
+                            <label htmlFor="selectAll" className='second'>
                                 ВЫБРАНО: {checkedStates.filter((checked) => checked).length}
                             </label>
                             <br />
                             <button
                                 onClick={handleDeleteSelected}
                                 type='button'
-                                className='text-primary text-sm flex items-center ml-10 hover:underline my-2'
+                                className='text-primary text-sm flex items-center md:ml-4 hover:underline my-2'
                             >
-                                Удалить <MdDelete />
+                                <span className='uid'>Удалить</span> <MdDelete />
                             </button>
                         </td>
-                        <td className='px-4'>
+                        <td className='px-4 first'>
                             ОПЛАТА
                         </td>
-                        <td className='px-4'>
+                        <td className='px-4 uid'>
                             UID
                         </td>
                         <td className='px-4'>
                             ТРЕК-НОМЕР
                         </td>
-                        <td className='px-4'>
+                        <td className='px-4 second'>
                             ДАТА
                         </td>
-                        <td className='px-4'>
+                        <td className='px-4 second'>
                             ПОЛУЧАТЕЛЬ
                         </td>
-                        <td className='px-4'>
+                        <td className='px-4 first'>
                             СТРАНА
                         </td>
-                        <td className='px-4'>
+                        <td className='px-4 tel'>
                             СТАТУС
                         </td>
-                        <td className='px-4'>
+                        <td className='px-4 uid'>
                             СТРАНА
                         </td>
                     </tr>
                     {currentUsers.map((checkbox, index) => (
-                        <tr key={`${checkbox.id}-${index}`} className="border-t border-b">
-                            <td className='pr-4 py-5 flex'>
+                        <tr key={`${checkbox.id}-${index}`} className="border-t border-b w-full">
+                            <td className='md:pr-4 py-5 flex'>
                                 <input
                                     type="checkbox"
                                     name={`checkbox-${checkbox.id}`}
@@ -286,32 +288,32 @@ const Added: React.FC = () => {
                                     className="mr-2"
                                 />
                             </td>
-                            <td className='px-2'>
+                            <td className='px-2 first'>
                                 {checkbox.payment}
                             </td>
-                            <td className='px-2'>
+                            <td className='px-2 uid'>
                                 {checkbox.uid}
                             </td>
                             <td className='px-2'>
                                 {checkbox.track}
                             </td>
-                            <td className='px-2'>
+                            <td className='px-2 second'>
                                 {checkbox.date}
                             </td>
-                            <td className='px-2'>
+                            <td className='px-2 second'>
                                 {checkbox.recipient}
                             </td>
-                            <td className='px-2'>
+                            <td className='px-2 first'>
                                 {checkbox.country}
                             </td>
-                            <td className='px-2'>
+                            <td className='px-2 flex-shrink-0 tel'>
                                 <img src={checkbox.img} />
                             </td>
-                            <td className='px-2 text-center'>
+                            <td className='px-2 flex justify-center'>
                                 <button
                                     type='button'
                                     onClick={openModal}
-                                    className='mt-4 pr-3 text-primary text-xl'>
+                                    className='mt-4 pr-3 text-primary sm:text-lg lg:text-xl'>
                                     <FiEdit />
                                 </button>
                                 {isModalOpen && <Modal onClose={closeModal} />}

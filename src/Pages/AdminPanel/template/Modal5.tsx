@@ -8,6 +8,10 @@ import OnWay from './PostsTemplates/OnWay';
 import InCountry from './PostsTemplates/InCountry';
 import OnDelivery from './PostsTemplates/OnDelivery';
 import Delivered from './PostsTemplates/Delivered';
+import { CiSearch } from "react-icons/ci";
+import { LiaTimesSolid } from "react-icons/lia";
+
+import '../AdminPanel.css';
 
 const Modal5: React.FC = () => {
 
@@ -18,34 +22,61 @@ const Modal5: React.FC = () => {
     };
 
     return (
-        <div className='w-full py-10 px-4'>
-            <div className='w-full bg-white p-6 rounded-md mt-6 shadow'>
+        <div className='w-full sm:py-10 px-4'>
+            <div className=''>
+                <h2 className='font-gilroy600'>
+                    Посылки за месяц
+                </h2>
+                <p>
+                    Список активных посылок
+                </p>
+            </div>
+            <div className='w-full bg-white sm:p-6 rounded-md mt-6 shadow'>
                 <div className='flex justify-between mb-10 gap-6'>
-                    <div className=''>
-                        <h2 className='font-gilroy600'>
-                            Посылки за месяц
-                        </h2>
-                        <p>
-                            Список активных посылок
-                        </p>
-                    </div>
-                    <div className='flex gap-2 items-center mb-4 flex-wrap'>
-
-                        <button className='py-2 px-4 bg-primary text-white font-gilroy600 rounded'>
-                            + Добавить
-                        </button>
-                        <button className='py-2 px-4 border text-primary hover:bg-primary hover:text-white border-primary
+                    <div className='flex gap-2 items-center mb-4 flex-wrap justify-between w-full'>
+                        <form className='flex gap-2 items-center flex-wrap p-2'>
+                            <input
+                                type="text"
+                                name='trackid'
+                                className='py-2 px-4 border border-primary outline-none
+                                transition-all font-gilroy600 rounded'
+                                placeholder='Поиск по треку'
+                            />
+                            <input
+                                type="text"
+                                name='userid'
+                                className='py-2 px-4 border border-primary outline-none
+                                transition-all font-gilroy600 rounded'
+                                placeholder='Поиск по треку'
+                            />
+                            <button
+                                type='submit'
+                                className='py-2 text-xl sm:text-3xl text-primary'>
+                                <CiSearch />
+                            </button>
+                            <button
+                                type='reset'
+                                className='py-2 text-xl sm:text-3xl text-primary'>
+                                <LiaTimesSolid />
+                            </button>
+                        </form>
+                        <div className='flex gap-2 items-center flex-wrap p-2'>
+                            <button className='py-2 px-4 bg-primary text-white font-gilroy600 rounded'>
+                                + Добавить
+                            </button>
+                            <button className='py-2 px-4 border text-primary hover:bg-primary hover:text-white border-primary
                         transition-all font-gilroy600 rounded flex items-center gap-2'>
-                            <MdUpload /> Загрузить EXCEL
-                        </button>
-                        <button className='py-2 px-4 border hover:bg-primary text-primary hover:text-white border-primary
+                                <MdUpload /> Загрузить EXCEL
+                            </button>
+                            <button className='py-2 px-4 border hover:bg-primary text-primary hover:text-white border-primary
                         transition-all font-gilroy600 rounded flex items-center gap-2'>
-                            <IoMdDownload /> Скачать в excel
-                        </button>
+                                <IoMdDownload /> Скачать в excel
+                            </button>
+                        </div>
 
                     </div>
                 </div>
-                <div className='flex gap-4 bg-ownGray py-4 text-sm'>
+                <div className='flex gap-4 bg-ownGray py-4 text-sm xl:flex-nowrap flex-wrap'>
                     <div className={`${activeModal === 'added' ? 'text-primary' : ''} px-4 border-r border-gray-400 outline-none`}>
                         <button
                             onClick={() => openModal('added')}
@@ -94,7 +125,7 @@ const Modal5: React.FC = () => {
                             На доставке (31)
                         </button>
                     </div>
-                    <div className={`${activeModal === 'delivered' ? 'text-primary' : ''} outline-none`}>
+                    <div className={`${activeModal === 'delivered' ? 'text-primary' : ''} outline-none md:ml-0 ml-4`}>
                         <button
                             onClick={() => openModal('delivered')}
                             className='px-2 font-gilroy600'

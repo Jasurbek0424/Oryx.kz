@@ -30,7 +30,9 @@ const Modal: React.FC<ModalProps> = ({ onClose }) => {
                 sm:px-6 rounded-md relative max-w-3xl w-full h-max"
                 onClick={(e) => e.stopPropagation()}>
                 <div className='flex justify-end gap-4 w-full mt-5'>
-                    <button type='submit' className='flex items-center gap-2 md:py-2 px-4 md:px-6
+                    <button
+                        onClick={onClose}
+                        type='submit' className='flex items-center gap-2 md:py-2 px-4 md:px-6
                     shadow bg-gray-400 rounded text-white'>
                         <TiArrowBackOutline className='text-lg' />
                         Назад
@@ -226,10 +228,10 @@ const Ready: React.FC = () => {
     };
 
     return (
-        <div className='w-full bg-white p-8 rounded-md mt-4 shadow border'>
+        <div className='w-full bg-white p-4 sm:p-8 sm:rounded-md sm:mt-4 sm:shadow sm:border'>
             <table className='w-full text-xs lg:text-sm'>
                 <tbody>
-                    <tr className=''>
+                    <tr className='w-full'>
                         <td className="">
                             <input
                                 type="checkbox"
@@ -238,40 +240,40 @@ const Ready: React.FC = () => {
                                 onChange={handleSelectAllChange}
                                 className="mr-2"
                             />
-                            <label htmlFor="selectAll">
+                            <label htmlFor="selectAll" className='second'>
                                 ВЫБРАНО: {checkedStates.filter((checked) => checked).length}
                             </label>
                             <br />
                             <button
                                 onClick={handleDeleteSelected}
                                 type='button'
-                                className='text-primary text-sm flex items-center ml-10 hover:underline my-2'
+                                className='text-primary text-sm flex items-center sm:ml-4 hover:underline my-2'
                             >
-                                Удалить <MdDelete />
+                                <span className='uid'>Удалить</span> <MdDelete />
                             </button>
                         </td>
-                        <td className='px-4'>
+                        <td className='px-4 first'>
                             ОПЛАТА
                         </td>
-                        <td className='px-4'>
+                        <td className='px-4 uid'>
                             UID
                         </td>
                         <td className='px-4'>
                             ТРЕК-НОМЕР
                         </td>
-                        <td className='px-4'>
+                        <td className='px-4 second'>
                             ДАТА
                         </td>
-                        <td className='px-4'>
+                        <td className='px-4 second'>
                             ПОЛУЧАТЕЛЬ
                         </td>
-                        <td className='px-4'>
+                        <td className='px-4 first'>
                             СТРАНА
                         </td>
-                        <td className='px-4'>
+                        <td className='px-4 tel'>
                             СТАТУС
                         </td>
-                        <td className='px-4'>
+                        <td className='px-4 uid'>
                             СТРАНА
                         </td>
                     </tr>
@@ -304,7 +306,7 @@ const Ready: React.FC = () => {
                             <td className='px-2'>
                                 {checkbox.country}
                             </td>
-                            <td className='px-2'>
+                            <td className='px-2 tel'>
                                 <img src={checkbox.img} />
                             </td>
                             <td className='px-2 text-center'>

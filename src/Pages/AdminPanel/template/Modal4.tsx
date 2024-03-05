@@ -28,7 +28,9 @@ const Modal: React.FC<ModalProps> = ({ onClose }) => {
                 sm:px-6 rounded-md relative max-w-3xl w-full h-max"
                 onClick={(e) => e.stopPropagation()}>
                 <div className='flex justify-end gap-4 w-full mt-5'>
-                    <button type='submit' className='flex items-center gap-2 md:py-2 px-4 md:px-6
+                    <button
+                        onClick={onClose}
+                        type='submit' className='flex items-center gap-2 md:py-2 px-4 md:px-6
                     shadow bg-gray-400 rounded text-white'>
                         <TiArrowBackOutline className='text-lg' />
                         Назад
@@ -222,8 +224,8 @@ const Modal4: React.FC = () => {
     };
 
     return (
-        <div className='w-full bg-white p-8 rounded-md mt-12 shadow'>
-            <div className='flex justify-between mb-10 gap-6'>
+        <div className='w-full bg-white  p-4 sm:p-8 sm:rounded-md sm:mt-12 sm:shadow'>
+            <div className='flex justify-between mb-10 gap-6 flex-wrap'>
                 <div className=''>
                     <h2 className='font-gilroy600'>
                         Пользователи
@@ -248,7 +250,7 @@ const Modal4: React.FC = () => {
             </div>
             <table className='w-full text-xs lg:text-sm'>
                 <tbody>
-                    <tr className=''>
+                    <tr className='w-full'>
                         <td className="">
                             <input
                                 type="checkbox"
@@ -257,25 +259,25 @@ const Modal4: React.FC = () => {
                                 onChange={handleSelectAllChange}
                                 className="mr-2"
                             />
-                            <label htmlFor="selectAll">
+                            <label htmlFor="selectAll" className='second'>
                                 ВЫБРАНО: {checkedStates.filter((checked) => checked).length}
                             </label>
                             <br />
                             <button
                                 onClick={handleDeleteSelected}
                                 type='button'
-                                className='text-primary text-sm flex items-center ml-10 hover:underline my-2'
+                                className='text-primary text-sm flex items-center sm:ml-4 hover:underline my-2'
                             >
-                                Удалить <MdDelete />
+                                <span className='uid'>Удалить</span> <MdDelete />
                             </button>
                         </td>
                         <td className='px-4'>
                             ФИО
                         </td>
-                        <td className='px-4'>
+                        <td className='px-4 uid'>
                             ДАТА ОТПРАВКИ
                         </td>
-                        <td className='px-4'>
+                        <td className='px-4 tel'>
                             <select name="status" id="status" className='border'>
                                 <option value="Все">Все</option>
                                 <option value="Подтверждён">Подтверждён</option>
@@ -302,17 +304,17 @@ const Modal4: React.FC = () => {
                             <td className='px-2'>
                                 {checkbox.title}
                             </td>
-                            <td className='px-2'>
+                            <td className='px-2 uid'>
                                 {checkbox.date}
                             </td>
-                            <td className='px-2 flex items-end gap-4'>
+                            <td className='px-2 tel '>
                                 {checkbox.status}
                             </td>
                             <td className='px-2'>
                                 <button
                                     type='button'
                                     onClick={openModal}
-                                    className='mt-4 pr-3 text-primary text-xl'>
+                                    className='mt-4 pr-3 text-primary text-lg md:text-xl'>
                                     <FiEdit />
                                 </button>
                                 {isModalOpen && <Modal onClose={closeModal} />}

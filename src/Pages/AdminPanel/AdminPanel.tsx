@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import Logo from '../../assets/adminLogo.png';
 import AdminImg from '../../assets/admin.png';
 import { GoCreditCard } from "react-icons/go";
@@ -12,10 +13,11 @@ import Modal2 from './template/Modal2';
 import Modal3 from './template/Modal3';
 import Modal4 from './template/Modal4';
 import Modal5 from './template/Modal5';
+import { Link } from 'react-router-dom';
 
 const AdminPanel: React.FC = () => {
 
-    const [activeModal, setActiveModal] = useState('modal5');
+    const [activeModal, setActiveModal] = useState<string>('modal5');
 
     const openModal = (modalType: string) => {
         setActiveModal(modalType);
@@ -25,9 +27,9 @@ const AdminPanel: React.FC = () => {
 
     return (
         <div className='bg-ownGray'>
-            <div className='pr-4'>
-                <nav className='flex justify-between bg-ownGray shadow-md border-b border-gray-400 w-full fixed z-10 pr-5'>
-                    <div className='bg-white py-4 px-4 w-[220px] lg:w-[240px]'>
+            <div className='md:pr-4'>
+                <nav className='flex justify-between bg-ownGray shadow-md border-b border-gray-400 w-full fixed z-10 pr-2 sm:pr-5'>
+                    <div className='bg-white py-4 px-4 sm:w-[220px] lg:w-[240px]'>
                         <a href="">
                             <img src={Logo} alt="logo" />
                         </a>
@@ -36,7 +38,7 @@ const AdminPanel: React.FC = () => {
                         onClick={() => openModal('panelSettings')}
                         className='flex items-center gap-2 cursor-pointer'>
                         <img src={AdminImg} />
-                        <div className='flex flex-col'>
+                        <div className='flex flex-col text-sm sm:text-md'>
                             <h2 className='font-gilroy600'>
                                 irina
                             </h2>
@@ -46,9 +48,9 @@ const AdminPanel: React.FC = () => {
                         </div>
                     </div>
                 </nav>
-                <div className='flex items-start gap-6'>
-                    <div className='bg-white fixed h-dvh w-[220px] lg:w-[240px] pb-4 flex flex-col justify-between z-0'>
-                        <div className='flex flex-col gap-2 pl-6 lg:pl-8 mt-20 text-sm '>
+                <div className='flex items-start panelInfo'>
+                    <div className='bg-white fixed md:h-dvh w-[220px] lg:w-[240px] pb-4 flex flex-col justify-between z-0 navPanel'>
+                        <div className='flex flex-col gap-2 pl-6 lg:pl-8 mt-20 text-sm panelNavList'>
                             <div className={`${activeModal === 'modal1' ? 'text-primary' : ''} flex items-center gap-3 text-md`}>
                                 <GoCreditCard className='text-xl' />
                                 <button
@@ -101,15 +103,15 @@ const AdminPanel: React.FC = () => {
                             </div>
                         </div>
                         <div className='border-t-2 border-gray-400 pl-8 pt-5'>
-                            <button className='text-lg md:text-xl font-gilroy600 flex items-center gap-2 hover:text-primary transition-all'>
+                            <Link to={'/'} className='sm:text-lg md:text-xl font-gilroy600 flex items-center gap-2 hover:text-primary transition-all'>
                                 <LuLogOut className='rotate-180' />
-                                LOG OUT
-                            </button>
+                                Выйти
+                            </Link>
                         </div>
                     </div>
                     <div
                         className='w-full py-8 flex justify-between bg-ownGray'>
-                        <div className='w-[240px] lg:w-[260px] flex flex-shrink-0 h-dvh'>
+                        <div className='w-[240px] lg:w-[260px] hidden md:flex flex-shrink-0 h-dvh'>
                         </div>
                         {activeModal === 'panelSettings' && (<PanelSettings />)}
                         {activeModal === 'modal1' && (<Modal1 />)}

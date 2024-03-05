@@ -171,8 +171,8 @@ const Modal3: React.FC = () => {
     };
 
     return (
-        <div className='w-full bg-white p-8 rounded-md mt-12 shadow'>
-            <div className='flex justify-between mb-10 gap-6'>
+        <div className='w-full bg-white p-8 rounded-md sm:mt-12 shadow'>
+            <div className='flex justify-between mb-10 gap-6 flex-wrap'>
                 <div className=''>
                     <h2 className='font-gilroy600'>
                         Пользователи
@@ -206,25 +206,25 @@ const Modal3: React.FC = () => {
                                 onChange={handleSelectAllChange}
                                 className="mr-2"
                             />
-                            <label htmlFor="selectAll">
+                            <label htmlFor="selectAll" className='second'>
                                 ВЫБРАНО: {checkedStates.filter((checked) => checked).length}
                             </label>
                             <br />
                             <button
                                 onClick={handleDeleteSelected}
                                 type='button'
-                                className='text-primary text-sm flex items-center ml-10 hover:underline my-2'
+                                className='text-primary text-sm flex items-center sm:ml-4 hover:underline my-2'
                             >
-                                Удалить <MdDelete />
+                                <span className='uid'>Удалить</span> <MdDelete />
                             </button>
                         </td>
                         <td className='px-4'>
                             ФИО
                         </td>
-                        <td className='px-4'>
+                        <td className='px-4 second'>
                             EMAIL
                         </td>
-                        <td className='px-4'>
+                        <td className='px-4 tel'>
                             ТЕЛЕФОН
                         </td>
                         <td className='px-4'>
@@ -246,14 +246,16 @@ const Modal3: React.FC = () => {
                             <td className='px-2'>
                                 {checkbox.title}
                             </td>
-                            <td className='px-2'>
+                            <td className='px-2 second'>
                                 {checkbox.email}
                             </td>
-                            <td className='py-5'>
+                            <td className='py-5 tel'>
                                 {checkbox.tel}
                             </td>
-                            <td className='px-2 flex items-end gap-4'>
-                                {checkbox.status}
+                            <td className='px-2 flex items-end justify-center gap-4'>
+                                <span className='second'>
+                                    {checkbox.status}
+                                </span>
                                 <button
                                     type='button'
                                     onClick={openModal}

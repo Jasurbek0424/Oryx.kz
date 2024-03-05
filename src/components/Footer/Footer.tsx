@@ -22,11 +22,11 @@ function Footer() {
                         </a>
                     </div>
                     <div className="flex md:flex-nowrap flex-wrap justify-center gap-4">
-                        <Link to={'#!'} className="py-1 px-2 border rounded-full bg-grayOpasity text-white 
+                        <Link to={'/panel'} className="py-1 px-2 border rounded-full bg-grayOpasity text-white 
                         text-xs sm:text-sm lg:text-md">
                             Войти в личный кабинет
                         </Link>
-                        <Link to={'#!'} className="py-1 px-2 border rounded-full bg-grayOpasity text-white 
+                        <Link to={'/panel'} className="py-1 px-2 border rounded-full bg-grayOpasity text-white 
                         text-xs sm:text-sm lg:text-md">
                             Регистрация в ЛК
                         </Link>

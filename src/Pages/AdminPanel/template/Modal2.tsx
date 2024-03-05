@@ -13,7 +13,7 @@ const Modal2: React.FC = () => {
     };
 
     return (
-        <div className='w-full py-10 px-4'>
+        <div className='w-full sm:py-10 px-4'>
             <div className='w-full'>
                 <h2 className='font-gilroy600 relative pb-2 '>
                     Настройки
@@ -24,7 +24,7 @@ const Modal2: React.FC = () => {
             </div>
             <div className='w-full bg-white p-6 rounded-md mt-6 shadow'>
 
-                <div className='flex gap-4 bg-ownGray py-4'>
+                <div className='flex gap-4 bg-ownGray py-4 flex-wrap'>
                     <div className={`${activeModal === 'shablon' ? 'text-primary' : ''} px-4 border-r border-gray-400 outline-none`}>
                         <button
                             onClick={() => openModal('shablon')}
@@ -49,7 +49,7 @@ const Modal2: React.FC = () => {
                             Страна отправки
                         </button>
                     </div>
-                    <div className={`${activeModal === 'Tarif' ? 'text-primary' : ''} outline-none`}>
+                    <div className={`${activeModal === 'Tarif' ? 'text-primary' : ''} px-4 border-r border-gray-400 md:border-none outline-none`}>
                         <button
                             onClick={() => openModal('Tarif')}
                             className='px-2 font-gilroy600'

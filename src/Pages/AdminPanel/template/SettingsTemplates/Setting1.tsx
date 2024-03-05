@@ -172,16 +172,16 @@ const Setting1: React.FC = () => {
                                 onChange={handleSelectAll}
                                 className="mr-2"
                             />
-                            <label htmlFor="selectAll">
+                            <label htmlFor="selectAll" className='second'>
                                 ВЫБРАНO: {checkboxes.filter((checkbox) => checkbox.checked).length}
                             </label>
                             <br />
                             <button
                                 onClick={handleDeleteSelected}
                                 type='button'
-                                className='text-primary text-sm flex items-center ml-10 hover:underline my-2'
+                                className='text-primary text-sm flex items-center sm:ml-4 hover:underline my-2'
                             >
-                                Удалить <MdDelete />
+                                <span className='uid'>Удалить</span> <MdDelete />
                             </button>
                         </td>
                         <td className='px-4'>
@@ -201,7 +201,9 @@ const Setting1: React.FC = () => {
                                     onChange={() => handleCheckboxChange(checkbox.id)}
                                     className="mr-2"
                                 />
-                                {checkbox.title}
+                                <span className='uid'>
+                                    {checkbox.title}
+                                </span>
                             </td>
                             <td className='py-5'>
                                 {checkbox.context.split('\n').map((paragraph, index) => (
