@@ -36,8 +36,8 @@ const Contacts: React.FC = () => {
                                 <h3 className='text-primary font-bold lg:text-lg'>
                                     Email:
                                 </h3>
-                                <a href='mailto:ofis@orix.kz' className='font-gilroy600'>
-                                    ofis@orix.kz
+                                <a href='mailto:info@oryx.kz' className='font-gilroy600'>
+                                    info@oryx.kz
                                 </a>
                             </div>
                             <div className='flex flex-col gap-2'>

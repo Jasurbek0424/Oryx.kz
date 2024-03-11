@@ -231,7 +231,7 @@ const OnDelivery: React.FC = () => {
         <div className='w-full bg-white p-4 sm:p-8 sm:rounded-md sm:mt-4 sm:shadow sm:border'>
             <table className='w-full text-xs lg:text-sm'>
                 <tbody>
-                    <tr className='w-full'>
+                    <tr className='w-full text-center'>
                         <td className="">
                             <input
                                 type="checkbox"
@@ -268,17 +268,17 @@ const OnDelivery: React.FC = () => {
                             ПОЛУЧАТЕЛЬ
                         </td>
                         <td className='px-4 first'>
-                            СТРАНА
+                            Город
                         </td>
                         <td className='px-4 tel'>
-                            СТАТУС
+                            СТРАНА
                         </td>
                         <td className='px-4 uid'>
-                            СТРАНА
+
                         </td>
                     </tr>
                     {currentUsers.map((checkbox, index) => (
-                        <tr key={`${checkbox.id}-${index}`} className="border-t border-b">
+                        <tr key={`${checkbox.id}-${index}`} className="border-t border-b text-center">
                             <td className='pr-4 py-5 flex'>
                                 <input
                                     type="checkbox"
@@ -304,9 +304,10 @@ const OnDelivery: React.FC = () => {
                                 Рамазанова Асель Амангельдиевна
                             </td>
                             <td className='px-2 first'>
+                                Астана
                             </td>
                             <td className='px-2 tel'>
-                                <img src={checkbox.img} />
+                                USA_DE - KZ
                             </td>
                             <td className='px-2 text-center flex'>
                                 <button

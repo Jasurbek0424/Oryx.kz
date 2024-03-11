@@ -141,7 +141,7 @@ const Parcels: React.FC = () => {
                                 <th className='py-1 px-4 border'>
                                     Трек-код
                                 </th>
-                                <th className='py-1 px-4 border'>
+                                <th className='py-1 px-4 border tel'>
                                     Статус
                                 </th>
                                 <th className='py-1 px-4 border smNone'>
@@ -164,7 +164,7 @@ const Parcels: React.FC = () => {
                                 <td className='text-sm sm:text-md sm:px-4 border'>
                                     1Z4399R3YW54310597
                                 </td>
-                                <td className=' sm:px-4 border'>
+                                <td className=' sm:px-4 border tel'>
                                     <Link to={'/profile/parcels/details'}>
                                         <img src={Status} className='mx-auto' />
                                     </Link>
@@ -187,7 +187,7 @@ const Parcels: React.FC = () => {
                                     </button>
                                     {isModalOpen && <Modal onClose={closeModal} />}
                                     <button type='button' className='sm:mx-3 text-lg mt-1'>
-                                        <Link to={'/'}>
+                                        <Link to={'/profile/parcels/details'}>
                                             <TbEdit />
                                         </Link>
                                     </button>
@@ -205,7 +205,7 @@ const Parcels: React.FC = () => {
                                 <td className='text-sm sm:text-md sm:px-4 border'>
                                     1Z4399R3YW54310597
                                 </td>
-                                <td className=' sm:px-4 border'>
+                                <td className=' sm:px-4 border tel'>
                                     <Link to={'/profile/parcels/details'}>
                                         <img src={Status} className='mx-auto' />
                                     </Link>
@@ -228,7 +228,7 @@ const Parcels: React.FC = () => {
                                     </button>
                                     {isModalOpen && <Modal onClose={closeModal} />}
                                     <button type='button' className='sm:mx-3 text-lg mt-1'>
-                                        <Link to={'/'}>
+                                        <Link to={'/profile/parcels/details'}>
                                             <TbEdit />
                                         </Link>
                                     </button>
@@ -246,7 +246,7 @@ const Parcels: React.FC = () => {
                                 <td className='text-sm sm:text-md sm:px-4 border'>
                                     1Z4399R3YW54310597
                                 </td>
-                                <td className=' sm:px-4 border'>
+                                <td className=' sm:px-4 border tel'>
                                     <Link to={'/profile/parcels/details'}>
                                         <img src={Status} className='mx-auto' />
                                     </Link>
@@ -269,7 +269,7 @@ const Parcels: React.FC = () => {
                                     </button>
                                     {isModalOpen && <Modal onClose={closeModal} />}
                                     <button type='button' className='sm:mx-3 text-lg mt-1'>
-                                        <Link to={'/'}>
+                                        <Link to={'/profile/parcels/details'}>
                                             <TbEdit />
                                         </Link>
                                     </button>

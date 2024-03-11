@@ -231,7 +231,7 @@ const Added: React.FC = () => {
         <div className='w-full bg-white p-4 md:p-8 sm:rounded-md mt-4 sm:shadow sm:border'>
             <table className='w-full text-xs lg:text-sm'>
                 <tbody>
-                    <tr className='w-full'>
+                    <tr className='w-full text-center'>
                         <td className="">
                             <input
                                 type="checkbox"
@@ -267,18 +267,18 @@ const Added: React.FC = () => {
                         <td className='px-4 second'>
                             ПОЛУЧАТЕЛЬ
                         </td>
-                        <td className='px-4 first'>
+                        <td className='px-4 first text-center'>
                             СТРАНА
                         </td>
                         <td className='px-4 tel'>
-                            СТАТУС
+                            Город
                         </td>
                         <td className='px-4 uid'>
-                            СТРАНА
+
                         </td>
                     </tr>
                     {currentUsers.map((checkbox, index) => (
-                        <tr key={`${checkbox.id}-${index}`} className="border-t border-b w-full">
+                        <tr key={`${checkbox.id}-${index}`} className="border-t border-b w-full text-center">
                             <td className='md:pr-4 py-5 flex'>
                                 <input
                                     type="checkbox"
@@ -301,13 +301,13 @@ const Added: React.FC = () => {
                                 {checkbox.date}
                             </td>
                             <td className='px-2 second'>
-                                {checkbox.recipient}
+                                Ф.И.О Клиента
                             </td>
-                            <td className='px-2 first'>
+                            <td className='px-2 first text-center'>
                                 {checkbox.country}
                             </td>
                             <td className='px-2 flex-shrink-0 tel'>
-                                <img src={checkbox.img} />
+                                USA_DE - KZ
                             </td>
                             <td className='px-2 flex justify-center'>
                                 <button
